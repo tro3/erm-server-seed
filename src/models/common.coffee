@@ -10,5 +10,8 @@ module.exports = {
       resp._items = req.erm.result
     else
       resp._item = req.erm.result
-    res.json(resp)
+    res
+      .set('Cache-Control', 'no-cache')
+      .set('Content-Type', 'application/json')
+      .send(resp)
 }
