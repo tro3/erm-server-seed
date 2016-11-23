@@ -4,6 +4,7 @@
   "description": "A server seed project for express-resitfy-mongoose",
   "main": "src/server.coffee",
   "scripts": {
+    "start": "nodemon src/server.coffee",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

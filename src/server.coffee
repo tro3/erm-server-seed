@@ -19,6 +19,7 @@ app.use(bodyParser.json())
 app.use(methodOverride())
 app.use(auth)
 app.use(api)
+app.use('/api/:coll', (req, res) -> res.status(404).send('Not Found'))
 app.use(express.static(staticDir))
 app.use((req, res) -> res.sendFile("index.html", {root:staticDir}))
 

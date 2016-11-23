@@ -5,7 +5,5 @@ module.exports = router = express.Router()
 
 
 for item in fs.readdirSync(__dirname)
-  console.log item
-  
-router.use(require('./projects').router)
-router.use(require('./users').router)
+  if fs.lstatSync("#{__dirname}/#{item}").isDirectory()
+    router.use(require("./#{item}").router)
